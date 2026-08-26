@@ -1,0 +1,200 @@
+{
+  "Common": {
+    "ticketsLeft": "{count} left",
+    "ofTotal": "of {total}",
+    "prev": "Prev",
+    "next": "Next",
+    "processing": "Processing…"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or may have been moved.",
+    "backHome": "Back to Events"
+  },
+  "OrderStatus": {
+    "all": "All",
+    "paid": "Paid",
+    "pending": "Pending",
+    "expired": "Expired",
+    "cancelled": "Cancelled"
+  },
+  "Header": {
+    "events": "Events",
+    "myOrders": "My Orders",
+    "logout": "Logout",
+    "signIn": "Sign In",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Footer": {
+    "tagline": "Discover and book tickets to concerts, sports, theater, comedy, and conferences.",
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "rights": "© {year} Tixora. All rights reserved."
+  },
+  "EventsPage": {
+    "heroTitle": "Find your next night out",
+    "heroSubtitle": "Concerts, sports, theater, comedy, and conferences — book tickets in minutes.",
+    "searchPlaceholder": "Search events, artists, venues…",
+    "categoryAll": "All",
+    "trendingNow": "Trending now",
+    "allEvents": "All Events",
+    "noEventsFound": "No events found.",
+    "tryAnotherCategory": "Try another category or search term.",
+    "errorTitle": "Something went wrong.",
+    "errorFallback": "Failed to load events"
+  },
+  "EventCard": {
+    "soldOut": "Sold Out",
+    "sellingFast": "Selling Fast",
+    "bookNow": "Book Now",
+    "signInToBook": "Sign in to Book"
+  },
+  "EventDetailPage": {
+    "backToEvents": "Back to Events",
+    "errorFallback": "Failed to load event",
+    "notFound": "This event could not be found.",
+    "venue": "Venue",
+    "date": "Date",
+    "perTicket": "per ticket",
+    "soldOut": "Sold Out",
+    "bookNow": "Book Now",
+    "signInToBook": "Sign in to Book",
+    "bookingNotice": "By booking, you agree to Tixora's Terms & Conditions. Tickets are non-refundable and non-transferable except as permitted by the event organizer. Please arrive with a valid ID matching the ticket holder's name."
+  },
+  "CheckoutPage": {
+    "backToEvents": "Back to Events",
+    "backToEvent": "Back to Event",
+    "title": "Order Your Tickets",
+    "stepEvent": "Your Event",
+    "stepBuyerInfo": "Buyer Information",
+    "buyerNameLabel": "Full Name",
+    "buyerNamePlaceholder": "Enter your full name",
+    "buyerEmailLabel": "Email",
+    "buyerEmailPlaceholder": "you@example.com",
+    "buyerNameInvalid": "Please enter your full name (at least 3 characters).",
+    "buyerEmailInvalid": "Please enter a valid email address.",
+    "stepQuantity": "How Many Tickets",
+    "available": "{count} available",
+    "priceAndPayment": "Price & Payment",
+    "unitPrice": "Unit price",
+    "qty": "Qty",
+    "subtotal": "Subtotal",
+    "adminFee": "Admin fee",
+    "total": "Total",
+    "proceedToPayment": "Proceed to Payment",
+    "eventSoldOut": "{title} is sold out.",
+    "errorFallback": "Failed to load event",
+    "eventNotFound": "Event not found",
+    "paymentPopupFailed": "Payment popup failed to load. Please refresh and retry.",
+    "paymentFailed": "Payment failed. Please try again."
+  },
+  "CheckoutSuccessPage": {
+    "orderRefMissingTitle": "Order reference missing",
+    "orderRefMissingDesc": "We couldn't find which order this confirmation belongs to.",
+    "goToOrders": "Go to My Orders →",
+    "couldntConfirmTitle": "Couldn't confirm your order",
+    "couldntConfirmDesc": "Your payment may still be processing. Check My Orders for the latest status.",
+    "paidTitle": "You're In!",
+    "pendingTitle": "Payment Pending",
+    "paidDesc": "Your tickets have been booked. Here's your e-ticket.",
+    "pendingDesc": "We're still waiting for your payment to be confirmed. This page will update once it's done.",
+    "admitOne": "Admit One",
+    "orderId": "Order ID",
+    "quantity": "Quantity",
+    "totalPaid": "Total Paid",
+    "viewOrderDetails": "View Order Details",
+    "browseMoreEvents": "Browse more events →"
+  },
+  "OrdersPage": {
+    "title": "My Orders",
+    "errorFallback": "Failed to load orders",
+    "noOrdersYet": "No orders yet.",
+    "bookEventHint": "Book an event and it will show up here."
+  },
+  "OrderCard": {
+    "qty": "Qty: {quantity}",
+    "viewDetails": "View Details →"
+  },
+  "OrderDetailPage": {
+    "backToOrders": "Back to Orders",
+    "orderNumber": "Order #{orderId}",
+    "purchasedOn": "Purchased {date}",
+    "errorFallback": "Failed to load order",
+    "orderNotFound": "Order not found",
+    "ticketSection": "Ticket",
+    "referenceNumber": "Reference number",
+    "quantity": "Quantity",
+    "priceBreakdown": "Price Breakdown",
+    "unitPrice": "Unit price",
+    "qty": "Qty",
+    "subtotal": "Subtotal",
+    "adminFee": "Admin fee",
+    "total": "Total",
+    "buyerAndPayment": "Buyer & Payment",
+    "name": "Name",
+    "email": "Email",
+    "paymentMethod": "Payment method",
+    "downloadTicket": "Download Ticket",
+    "continuePayment": "Continue Payment",
+    "keepOrder": "Keep order",
+    "confirmCancel": "Confirm cancel",
+    "cancelling": "Cancelling...",
+    "cancelOrder": "Cancel Order",
+    "cancelOrderDescription": "This can't be undone. Your reserved tickets will be released.",
+    "paymentPopupFailed": "Payment popup failed to load. Please refresh and retry.",
+    "paymentFailed": "Payment failed. Please try again."
+  },
+  "ProfilePage": {
+    "title": "Profile",
+    "joined": "Joined {date}",
+    "totalOrders": "Total Orders",
+    "totalSpent": "Total Spent",
+    "quickLinks": "Quick Links",
+    "viewOrderHistory": "View order history →",
+    "browseEvents": "Browse events →",
+    "logout": "Logout"
+  },
+  "LoginPage": {
+    "heroTagline": "Find your next concert, match, or show — and get in the door without the hassle.",
+    "title": "Sign in to Tixora",
+    "subtitle": "Sign in to book tickets to your next event.",
+    "signInWithGoogle": "Sign in with Google",
+    "agreementPrefix": "By continuing, you agree to Tixora's",
+    "termsLink": "Terms",
+    "and": "and",
+    "privacyLink": "Privacy Policy",
+    "errorNoCode": "Google sign-in was cancelled or did not return a code.",
+    "errorAuthFailed": "We could not sign you in with Google. Please try again.",
+    "errorMissingData": "Sign-in response was incomplete. Please try again.",
+    "errorInvalidData": "Sign-in response was invalid. Please try again.",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "signingIn": "Signing you in",
+    "checkingSession": "Checking your session"
+  },
+  "AboutPage": {
+    "title": "About Tixora",
+    "p1": "Tixora is a platform for discovering and booking tickets to concerts, sports, theater, and other live events.",
+    "p2": "We work directly with event organizers to bring tickets online, so you can browse, book, and manage your orders in one place."
+  },
+  "PrivacyPage": {
+    "title": "Privacy Policy",
+    "p1": "Tixora collects the information you provide when you sign in and book tickets, such as your name, email address, and profile picture from your Google account, along with your order history.",
+    "p2": "We use this information solely to process ticket orders, send booking confirmations, and provide customer support. We do not sell your personal data to third parties.",
+    "p3": "If you have questions about how your data is handled, please contact our support team."
+  },
+  "TermsPage": {
+    "title": "Terms & Conditions",
+    "p1": "By purchasing tickets through Tixora, you agree to these terms. Tickets are issued subject to availability and are non-refundable and non-transferable, except where required by law or permitted by the event organizer.",
+    "p2": "You are responsible for providing accurate buyer information at checkout. Ticket holders may be asked to present a valid ID matching the name on the order at the venue.",
+    "p3": "Tixora acts as a ticketing platform on behalf of event organizers and is not responsible for event cancellations, rescheduling, or changes made by the organizer."
+  },
+  "ProtectedRoute": {
+    "checkingSession": "Checking your session"
+  },
+  "CheckoutLoading": {
+    "loadingCheckout": "Loading checkout",
+    "confirmingOrder": "Confirming your order"
+  }
+}
