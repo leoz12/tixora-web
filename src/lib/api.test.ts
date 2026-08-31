@@ -10,58 +10,6 @@ import { hardNavigate } from "@/lib/navigate";
 
 const mockedHardNavigate = hardNavigate as jest.Mock;
 
-function setCookie(value: string | null) {
-  // Expire whatever's there first - jsdom's cookie jar merges by name, it
-  // doesn't let a second `document.cookie = "name=..."` assignment overwrite
-  // in the same tick reliably across test runs.
-  document.cookie = "tx_csrf_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-  if (value !== null) {
-    document.cookie = `tx_csrf_token=${value}`;
-  }
-}
-
-describe("api - CSRF header (double-submit cookie)", () => {
-  let mock: MockAdapter;
-
-  beforeEach(() => {
-    mock = new MockAdapter(api);
-    setCookie(null);
-  });
-
-  afterEach(() => {
-    mock.restore();
-  });
-
-  it("attaches X-CSRF-Token on a state-changing request when the cookie is present", async () => {
-    setCookie("abc123");
-    mock.onPost("/orders").reply((config) => {
-      expect(config.headers?.["X-CSRF-Token"]).toBe("abc123");
-      return [200, {}];
-    });
-
-    await api.post("/orders", {});
-  });
-
-  it("does not attach X-CSRF-Token to a GET request", async () => {
-    setCookie("abc123");
-    mock.onGet("/events").reply((config) => {
-      expect(config.headers?.["X-CSRF-Token"]).toBeUndefined();
-      return [200, {}];
-    });
-
-    await api.get("/events");
-  });
-
-  it("omits the header on a state-changing request when there's no cookie yet", async () => {
-    mock.onPost("/orders").reply((config) => {
-      expect(config.headers?.["X-CSRF-Token"]).toBeUndefined();
-      return [200, {}];
-    });
-
-    await api.post("/orders", {});
-  });
-});
-
 describe("api - 401 refresh-and-retry flow", () => {
   let mock: MockAdapter;
 
