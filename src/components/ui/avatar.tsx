@@ -29,6 +29,10 @@ function AvatarImage({ className, ...props }: AvatarPrimitive.Image.Props) {
   return (
     <AvatarPrimitive.Image
       data-slot="avatar-image"
+      // Profile avatars should fetch immediately, never lazily
+      loading="eager"
+      fetchPriority="high"
+      decoding="sync"
       className={cn(
         "aspect-square size-full rounded-full object-cover",
         className
