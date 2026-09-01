@@ -20,14 +20,22 @@ function AuthHydrator({ initialUser }: { initialUser: User | null }) {
   useEffect(() => {
     if (initialUser) {
       setUser(initialUser);
+      // Server already confirmed the session - safe to stop loading now.
+      setLoading(false);
     }
-    setLoading(false);
+    // When initialUser is null we must NOT conclude "logged out" yet:
+    // getServerUser() uses a plain fetch with no token refresh, so it fails
+    // open to null whenever the short-lived access-token cookie is expired,
+    // even for a perfectly valid session. Stay in the loading state until
+    // the client-side /auth/me check below (which CAN refresh via the axios
+    // interceptor) settles - otherwise route guards like ProtectedRoute act
+    // on a false "unauthenticated" and bounce the user to /login.
   }, [initialUser, setUser, setLoading]);
 
-  // Silent background reconciliation: catches the rare case where the SSR
-  // check above failed/timed out, or the session changed between that
-  // server render and this mount. Never flips isLoading back to true, so it
-  // can't bring the skeleton back.
+  // Client-side auth check. Always runs: when SSR found no user this is the
+  // authoritative check (and can recover an expired access token); when SSR
+  // did find one this is a silent background reconciliation for a session
+  // that changed between the server render and this mount.
   const { data, isError, isFetched } = useCurrentUser(true);
 
   useEffect(() => {
@@ -38,7 +46,9 @@ function AuthHydrator({ initialUser }: { initialUser: User | null }) {
     } else if (isError) {
       logout();
     }
-  }, [data, isError, isFetched, setUser, logout]);
+    // The client check has now settled - whatever it concluded is final.
+    setLoading(false);
+  }, [data, isError, isFetched, setUser, logout, setLoading]);
 
   return null;
 }
